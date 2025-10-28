@@ -4,7 +4,7 @@ This Terraform configuration deploys EC2 instances across three AWS regions with
 
 ## Architecture
 
-- **US-East-1**: 3x t4g.medium (Graviton/ARM64) instances
+- **US-East-1**: 3x t3.micro (x86_64) instances
 - **US-West-2**: 2x t3.medium (x86_64) instances  
 - **AP-South-1**: 4x t3.large (x86_64) instances
 
