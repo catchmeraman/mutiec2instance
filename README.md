@@ -10,6 +10,10 @@ A complete Infrastructure-as-Code solution for deploying EC2 instances across mu
 
 ![Architecture Diagram](docs/architecture-diagram.png)
 
+## 🚀 CI/CD Pipeline Architecture
+
+![CI/CD Pipeline](generated-diagrams/cicd-pipeline-diagram.png)
+
 ```
 ┌─────────────────┬─────────────────┬─────────────────┐
 │   US-East-1     │   US-West-2     │   AP-South-1    │
