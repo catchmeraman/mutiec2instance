@@ -8,17 +8,19 @@ A complete Infrastructure-as-Code solution for deploying EC2 instances across mu
 
 ## 🏗️ Architecture Overview
 
+![Architecture Diagram](docs/architecture-diagram.png)
+
 ```
 ┌─────────────────┬─────────────────┬─────────────────┐
 │   US-East-1     │   US-West-2     │   AP-South-1    │
 │   (Virginia)    │   (Oregon)      │   (Mumbai)      │
 ├─────────────────┼─────────────────┼─────────────────┤
-│ 3x t3.micro     │ 2x t3.medium    │ 4x t3.large     │
+│ 3x t3.micro     │ 4x t3.medium    │ 8x t3.large     │
 │ (x86_64)        │ (x86_64)        │ (x86_64)        │
 └─────────────────┴─────────────────┴─────────────────┘
 ```
 
-**Total: 9 instances across 3 regions**
+**Total: 15 instances across 3 regions**
 
 ## ✨ Features
 
@@ -74,8 +76,8 @@ terraform apply
 | Region | Count | Instance Type | Architecture | Use Case |
 |--------|-------|---------------|--------------|----------|
 | US-East-1 | 3 | t3.micro | x86_64 | Development/Testing |
-| US-West-2 | 2 | t3.medium | x86_64 | Staging |
-| AP-South-1 | 4 | t3.large | x86_64 | Production |
+| US-West-2 | 4 | t3.medium | x86_64 | Staging |
+| AP-South-1 | 8 | t3.large | x86_64 | Production |
 
 ### Variables Reference
 
@@ -182,9 +184,9 @@ Approximate monthly costs (On-Demand pricing):
 | Region | Instance Type | Count | Monthly Cost* |
 |--------|---------------|-------|---------------|
 | US-East-1 | t3.micro | 3 | ~$7.50 |
-| US-West-2 | t3.medium | 2 | ~$30.00 |
-| AP-South-1 | t3.large | 4 | ~$120.00 |
-| **Total** | | **9** | **~$157.50** |
+| US-West-2 | t3.medium | 4 | ~$60.00 |
+| AP-South-1 | t3.large | 8 | ~$240.00 |
+| **Total** | | **15** | **~$307.50** |
 
 *Estimates based on On-Demand pricing. Actual costs may vary.
 
