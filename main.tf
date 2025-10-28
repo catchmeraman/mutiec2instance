@@ -55,6 +55,7 @@ resource "aws_instance" "us_east_1_x86" {
   count         = 3
   ami           = data.aws_ami.x86_ami_east.id
   instance_type = "t3.micro"
+  subnet_id     = "subnet-027786412de6939f2"
   
   tags = {
     Name        = "x86-instance-east-${count.index + 1}"

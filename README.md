@@ -31,6 +31,15 @@ A complete Infrastructure-as-Code solution for deploying EC2 instances across mu
 - 📊 **Cost Optimized**: Right-sized instances for different workloads
 - 🏷️ **Well-Tagged**: Proper resource tagging for management
 
+## 📊 Current Status (Updated: Oct 28, 2025)
+
+✅ **Infrastructure Deployed**: 9 EC2 instances across 3 regions (Terraform managed)  
+⚠️ **Additional Instances**: 6 unmanaged instances detected (see [EC2_INFRASTRUCTURE_STATUS.md](EC2_INFRASTRUCTURE_STATUS.md))  
+✅ **Terraform State**: Synced with S3 backend  
+✅ **Cost Estimate**: ~$307.50/month (managed instances only)  
+✅ **Documentation**: Complete with architecture diagrams  
+🆕 **S3 Tables State Locking**: Alternative to DynamoDB available (see [S3_TABLES_STATE_LOCKING.md](S3_TABLES_STATE_LOCKING.md))
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -104,6 +113,11 @@ environment = "production"
 ├── 📤 outputs.tf                   # Output values
 ├── 📋 versions.tf                  # Provider requirements
 ├── 📝 terraform.tfvars.example     # Example variables
+├── 📊 EC2_INFRASTRUCTURE_STATUS.md # Current infrastructure status
+├── 🔒 S3_TABLES_STATE_LOCKING.md  # S3 Tables state locking guide
+├── 🔧 backend-s3tables.tf         # S3 Tables backend configuration
+├── 📁 docs/                       # Documentation and diagrams
+├── 📁 generated-diagrams/         # Architecture diagrams
 └── 🚫 .gitignore                   # Git ignore rules
 ```
 
