@@ -1,11 +1,11 @@
 output "us_east_1_instance_ids" {
-  description = "Instance IDs for US-East-1 Graviton instances"
-  value       = aws_instance.us_east_1_graviton[*].id
+  description = "Instance IDs for US-East-1 x86 instances"
+  value       = aws_instance.us_east_1_x86[*].id
 }
 
 output "us_east_1_public_ips" {
   description = "Public IPs for US-East-1 instances"
-  value       = aws_instance.us_east_1_graviton[*].public_ip
+  value       = aws_instance.us_east_1_x86[*].public_ip
 }
 
 output "us_west_2_instance_ids" {
@@ -30,5 +30,5 @@ output "ap_south_1_public_ips" {
 
 output "total_instance_count" {
   description = "Total number of instances across all regions"
-  value       = length(aws_instance.us_east_1_graviton) + length(aws_instance.us_west_2_x86) + length(aws_instance.ap_south_1_x86)
+  value       = length(aws_instance.us_east_1_x86) + length(aws_instance.us_west_2_x86) + length(aws_instance.ap_south_1_x86)
 }

@@ -1,5 +1,5 @@
 variable "us_east_1_instance_count" {
-  description = "Number of Graviton instances in US-East-1"
+  description = "Number of x86 instances in US-East-1"
   type        = number
   default     = 3
 }
@@ -16,10 +16,10 @@ variable "ap_south_1_instance_count" {
   default     = 4
 }
 
-variable "graviton_instance_type" {
-  description = "Instance type for Graviton instances"
+variable "us_east_1_instance_type" {
+  description = "Instance type for US-East-1 instances"
   type        = string
-  default     = "t4g.medium"
+  default     = "t3.micro"
 }
 
 variable "x86_instance_type_medium" {

@@ -24,14 +24,14 @@ provider "aws" {
 }
 
 # Data sources for AMIs
-data "aws_ami" "graviton_ami" {
+data "aws_ami" "x86_ami_east" {
   provider    = aws.us_east_1
   most_recent = true
   owners      = ["amazon"]
   
   filter {
     name   = "name"
-    values = ["amzn2-ami-hvm-*-arm64-gp2"]
+    values = ["amzn2-ami-hvm-*-x86_64-gp2"]
   }
 }
 
@@ -57,18 +57,18 @@ data "aws_ami" "x86_ami_mumbai" {
   }
 }
 
-# US-East-1: 3x t4g.medium (Graviton)
-resource "aws_instance" "us_east_1_graviton" {
+# US-East-1: 3x t3.micro
+resource "aws_instance" "us_east_1_x86" {
   provider      = aws.us_east_1
   count         = 3
-  ami           = data.aws_ami.graviton_ami.id
-  instance_type = "t4g.medium"
+  ami           = data.aws_ami.x86_ami_east.id
+  instance_type = "t3.micro"
   
   tags = {
-    Name        = "graviton-instance-${count.index + 1}"
+    Name        = "x86-instance-east-${count.index + 1}"
     Environment = "production"
     Region      = "us-east-1"
-    Architecture = "arm64"
+    Architecture = "x86_64"
   }
 }
 
