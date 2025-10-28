@@ -1,0 +1,11 @@
+# Copy this file to terraform.tfvars and customize as needed
+
+us_east_1_instance_count   = 3
+us_west_2_instance_count   = 2
+ap_south_1_instance_count  = 4
+
+graviton_instance_type     = "t4g.medium"
+x86_instance_type_medium   = "t3.medium"
+x86_instance_type_large    = "t3.large"
+
+environment = "production"
